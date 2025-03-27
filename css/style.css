@@ -1,11 +1,12 @@
 body {
     font-family: Arial, sans-serif;
+    color: rgb(255, 203, 125);
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
-    background-image: url("https://c0.wallpaperflare.com/preview/565/228/846/japanese-japan-restaurant-culture.jpg");
+    background-image: url("https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8cmlzdG9yYW50ZXxlbnwwfHwwfHx8MA%3D%3D");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -15,33 +16,37 @@ body {
     border: 2px solid black;
     padding: 20px;
     border-radius: 5px;
-    background-color: rgb(228, 228, 228);
+    background-color: rgb(9, 2, 33);
     width: 300px;
     text-align: center;
 }
-.login-div h1 {
+.login-div h1{
     margin-bottom: 20px;
 }
-.login-div label {
+.login-div label{
     display: block;
     margin: 10px 0 5px;
+    
 }
-.login-div input {
-    width: 100%;
+.login-div input{
+    width: 90%;
     padding: 8px;
     margin-bottom: 15px;
     border: 1px solid #ccc;
     border-radius: 4px;
 }
-.login-div button {
+
+.login-div button{
     width: 100%;
     padding: 10px;
-    background-color: rgb(30, 150, 30);
-    color: white;
+    margin-bottom: 25px;
+    margin-top: 10px;
+    background-color: rgb(21, 34, 80);
+    color: rgb(255, 203, 125);
     border: none;
     border-radius: 4px;
     cursor: pointer;
 }
 .login-div button:hover {
-    background-color: rgb(51, 197, 51);
+    background-color: rgb(10, 36, 120);
 }
