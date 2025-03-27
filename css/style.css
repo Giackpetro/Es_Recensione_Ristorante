@@ -1,10 +1,15 @@
+html{   /*assicura che il body possa utilizzare il 100% dell'altezza*/
+    height: 100%;
+    margin: 0;
+    padding: 0;   
+}
 body {
     font-family: Arial, sans-serif;
     color: rgb(255, 203, 125);
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 100%;
     margin: 0;
     background-image: url("https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8cmlzdG9yYW50ZXxlbnwwfHwwfHx8MA%3D%3D");
     background-size: cover;
@@ -39,8 +44,8 @@ body {
 .login-div button{
     width: 100%;
     padding: 10px;
-    margin-bottom: 25px;
     margin-top: 10px;
+    margin-bottom: 4px;
     background-color: rgb(21, 34, 80);
     color: rgb(255, 203, 125);
     border: none;
@@ -49,4 +54,9 @@ body {
 }
 .login-div button:hover {
     background-color: rgb(10, 36, 120);
+}
+.login-div a {
+    color: rgb(3, 3, 200);
+    margin-right: 50px;
+    text-decoration: none;
 }
