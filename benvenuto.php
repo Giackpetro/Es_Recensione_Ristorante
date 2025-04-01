@@ -1,3 +1,11 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
 <?php
 session_start();
 include 'connessione.php';
@@ -10,5 +18,27 @@ if (!isset($_SESSION['username'])) {
 }
 echo ("Benvenuto " . $_SESSION["username"] . "<br>");
 
-echo '<a href="scriptlogout.php">Logout</a>';
+
+$sql = "SELECT * FROM utente WHERE username = '" . $_SESSION["username"]. "'";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+    $row = $result->fetch_assoc();
+    $username = $row["username"];
+    $password = $row["password"];
+    $nome = $row["nome"];
+    $cognome = $row["cognome"];
+    $email = $row["email"];
+}
+
 ?>
+    <ul>
+        <li><?php echo($_SESSION["username"]); ?></li>
+        <li><?php echo($nome); ?></li>
+        <li><?php echo($cognome); ?></li>
+        <li><?php echo($email); ?></li>
+    </ul>
+    
+<a href="scriptlogout.php">Logout</a>
+</body>
+</html>
