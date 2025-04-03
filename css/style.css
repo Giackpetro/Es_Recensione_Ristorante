@@ -1,3 +1,4 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
 html{   /*assicura che il body possa utilizzare il 100% dell'altezza*/
     height: 100%;
     margin: 0;
@@ -17,6 +18,7 @@ body {
     background-repeat: no-repeat;
     overflow: hidden;
 }
+
 .login-div {
     border: 2px solid black;
     padding: 20px;
@@ -27,11 +29,12 @@ body {
 }
 .login-div h1{
     margin-bottom: 20px;
+    color: rgb(255, 203, 125);
 }
 .login-div label{
     display: block;
     margin: 10px 0 5px;
-    
+    color: rgb(255, 203, 125);
 }
 .login-div input{
     width: 90%;
@@ -42,10 +45,10 @@ body {
 }
 
 .login-div button{
-    width: 100%;
+    width: 90%;
     padding: 10px;
     margin-top: 10px;
-    margin-bottom: 4px;
+    margin-bottom: 10px;
     background-color: rgb(21, 34, 80);
     color: rgb(255, 203, 125);
     border: none;
@@ -57,6 +60,43 @@ body {
 }
 .login-div a {
     color: rgb(3, 3, 200);
-    margin-right: 50px;
     text-decoration: none;
 }
+
+.social-table {
+    position: fixed; /* Posizionato in fondo alla pagina */
+    bottom: 0;
+    width: 100%; /* Larghezza totale */
+    background-color: #00000044;
+    backdrop-filter: blur(8px);
+    padding: 10px 0;
+    z-index: 10; /* Assicura che sia sopra l'immagine di sfondo */
+}
+
+.social-table a {
+    text-decoration: none; /* Rimuove la sottolineatura */
+    color: rgb(255, 203, 125); /* Colore delle scritte */
+    transition: color 0.3s ease;
+}
+
+.social-table a:hover {
+    color: rgb(255, 175, 75); /* Cambia colore al passaggio del mouse */
+}
+
+.social-table p {
+    margin: 0;
+    font-size: 14px;
+    color: rgb(255, 203, 125); /* Colore delle scritte */
+}
+
+.social-table i {
+    margin-bottom: 5px;
+    color: rgb(255, 203, 125); /* Colore delle icone */
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-table i:hover {
+    transform: scale(1.2); /* Effetto zoom sull'icona */
+    color: rgb(255, 175, 75); /* Colore più scuro al passaggio del mouse */
+}
+
