@@ -25,10 +25,10 @@ $result = $conn->query($sql);
 if ($result->num_rows > 0) {
     $row = $result->fetch_assoc();
     $username = $row["username"];
-    $password = $row["password"];
     $nome = $row["nome"];
     $cognome = $row["cognome"];
     $email = $row["email"];
+    $datareg = $row["dataregistrazione"];
 }
 
 ?>
@@ -37,8 +37,8 @@ if ($result->num_rows > 0) {
         <li><?php echo($nome); ?></li>
         <li><?php echo($cognome); ?></li>
         <li><?php echo($email); ?></li>
-    </ul>
-    
+        <li><?php echo($datareg); ?></li>
+    </ul> 
 <a href="scriptlogout.php">Logout</a>
 </body>
 </html>

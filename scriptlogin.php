@@ -10,10 +10,12 @@ include 'connessione.php';
 
     $result = $conn->query($sql);
     
+    //crittografia della password
+    $passwordHashata = hash("sha256", $password);
     if ($result->num_rows > 0) {
         $row = $result->fetch_assoc();
         // Controllo della password
-        if ($row["password"] === $password) {
+        if ($row["password"] === $passwordHashata) {
             // Login riuscito
             $_SESSION["username"] = $row["username"];
             header("Location: benvenuto.php");

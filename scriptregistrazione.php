@@ -17,7 +17,7 @@ if ($resultUsername->num_rows > 0) {
     $_SESSION["errore"] = "Username già in uso.";
     header("Location: errore_loginreg.php");
     exit();
-}
+} 
 
 //controllo se l'email esiste già nel database
 $sqlEmail = "SELECT * FROM utente WHERE email = '$email'";
@@ -34,8 +34,7 @@ if ($resultEmail->num_rows > 0) {
 $passwordHash = hash("sha256", $password);
 
 //inserisco il nuovo utente nel database
-$sqlInsert = "INSERT INTO utente (username, password, nome, cognome, email) 
-              VALUES ('$username', '$passwordHash', '$nome', '$cognome', '$email')";
+$sqlInsert = "INSERT INTO utente (username, password, nome, cognome, email)  VALUES ('$username', '$passwordHash', '$nome', '$cognome', '$email')";
 
 if ($conn->query($sqlInsert) === TRUE) {
     //registrazione effettuata
