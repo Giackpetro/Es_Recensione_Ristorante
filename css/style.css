@@ -26,8 +26,14 @@ body {
     background-color: rgb(9, 2, 33);
     width: 300px;
     text-align: center;
+    border-radius: 6%;
+    margin-bottom: 100px;
 }
 .login-div h1{
+    margin-bottom: 20px;
+    color: rgb(255, 203, 125);
+}
+.login-div h2{
     margin-bottom: 20px;
     color: rgb(255, 203, 125);
 }

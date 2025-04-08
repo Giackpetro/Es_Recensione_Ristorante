@@ -1,41 +1,52 @@
 <?php
 session_start();
-include 'connessione.php'; // File per la connessione al database
+include 'connessione.php';
 
-// Recupera i dati inviati dalla form
 $username = $_POST["username"];
 $password = $_POST["password"];
 $nome = $_POST["nome"];
 $cognome = $_POST["cognome"];
 $email = $_POST["email"];
 
-// Controlla se l'username o l'email esistono già nel database
-$sql = "SELECT * FROM utente WHERE username = '$username' OR email = '$email'";
-$result = $conn->query($sql);
+//controllo se l'username esiste già nel database
+$sqlUsername = "SELECT * FROM utente WHERE username = '$username'";
+$resultUsername = $conn->query($sqlUsername);
 
-if ($result->num_rows > 0) {
-    // Username o email già esistenti
-    $_SESSION["errore"] = "Username o email già in uso.";
+if ($resultUsername->num_rows > 0) {
+    //username già esistente
+    $_SESSION["errore"] = "Username già in uso.";
     header("Location: errore_loginreg.php");
     exit();
-} else {
-    // Crittografia della password
-    $passwordHash = hash("sha256", $password);
-
-    // Inserisce il nuovo utente nel database
-    $sqlInsert = "INSERT INTO utente (username, password, nome, cognome, email) 
-                  VALUES ('$username', '$passwordHash', '$nome', '$cognome', '$email')";
-
-    if ($conn->query($sqlInsert) === TRUE) {
-        // Registrazione riuscita
-        $_SESSION["username"] = $username; // Salva l'username nella sessione
-        header("Location: benvenuto.php"); // Reindirizza alla pagina di benvenuto
-        exit();
-    } else {
-        // Errore durante l'inserimento nel database
-        $_SESSION["errore"] = "Errore durante la registrazione. Riprova.";
-        header("Location: errore_loginreg.php");
-        exit();
-    }
 }
+
+//controllo se l'email esiste già nel database
+$sqlEmail = "SELECT * FROM utente WHERE email = '$email'";
+$resultEmail = $conn->query($sqlEmail);
+
+if ($resultEmail->num_rows > 0) {
+    //email già esistente
+    $_SESSION["errore"] = "Email già in uso.";
+    header("Location: errore_loginreg.php");
+    exit();
+}
+
+//crittografia della password
+$passwordHash = hash("sha256", $password);
+
+//inserisco il nuovo utente nel database
+$sqlInsert = "INSERT INTO utente (username, password, nome, cognome, email) 
+              VALUES ('$username', '$passwordHash', '$nome', '$cognome', '$email')";
+
+if ($conn->query($sqlInsert) === TRUE) {
+    //registrazione effettuata
+    $_SESSION["username"] = $username; 
+    header("Location: benvenuto.php");
+    exit();
+} else {
+    //errore durante l'inserimento nel database
+    $_SESSION["errore"] = "Errore durante la registrazione. Riprova.";
+    header("Location: errore_loginreg.php");
+    exit();
+}
+
 ?>
