@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,17 +8,25 @@
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css">
 </head>
-
 <body>
+    <?php 
+    session_start();
+    ?>
     <div class="login-div">
         <h1>Login</h1>
         <form action="scriptlogin.php" method="post">
             <label for="username">Username:</label>
             <input type="text" id="username" name="username" required>
+            <?php if (isset($_SESSION['errore']["erroreUsername"])) {
+                echo "<p class='errore'>" . $_SESSION['errore']["erroreUsername"] . "</p>";
+            } ?>
             <label for="password">Password:</label>
             <input type="password" id="password" name="password" required>
+            <?php if (isset($_SESSION['errore']["errorePassword"])) {
+                echo "<p class='errore'>" . $_SESSION['errore']["errorePassword"] . "</p>";
+            } ?>
             <button type="submit">Login</button>
-            <a href="./paginaregistrazione.html">Non hai un account? Registrati qui!</a>
+            <a href="./paginaregistrazione.php">Non hai un account? Registrati qui!</a>
         </form>
     </div>
 
@@ -48,10 +57,10 @@
             </div>
         </div>
     </div>
-    
+
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
-    
+
 </body>
 
 </html>

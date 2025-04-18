@@ -1,5 +1,9 @@
 <?php
+
 session_start();
+foreach ($_SESSION["errore"] as $key => $value) {
+    unset($_SESSION["errore"][$key]);
+}
 include 'connessione.php';
 
     $username = $_POST["username"];
@@ -14,22 +18,20 @@ include 'connessione.php';
     $passwordHashata = hash("sha256", $password);
     if ($result->num_rows > 0) {
         $row = $result->fetch_assoc();
-        // Controllo della password
-        if ($row["password"] === $passwordHashata) {
+        // Controllo della password 
+        if ($row["password"] === substr($passwordHashata, 0, 60)) {    //MODIFICARE PASSWORD SUL DB PER METTERLE CON 64 CARATTERI
             // Login riuscito
             $_SESSION["username"] = $row["username"];
             header("Location: benvenuto.php");
             exit();
         } else {
             // Password errata
-            $_SESSION["errore"] = "Password errata.";
-            header("Location: errore_loginreg.php");
+            $_SESSION["errore"]["errorePassword"] = "Password errata.";
+            header("Location: paginalogin.php");
             exit();
         }
-    } else {
-        // Username non esistente
-        $_SESSION["errore"] = "Username non esistente.";
-        header("Location: errore_loginreg.php");
+    } else {$_SESSION["errore"]["erroreUsername"] = "Username non esistente.";
+        header("Location: paginalogin.php");
         exit();
     }
 ?>

@@ -8,7 +8,7 @@
     <title>Registrazione</title>
 </head>
 <body>
-    <div class="login-div">
+    <div class="reg-div">
     <h2>Registrazione Utente</h2>
     <form action="scriptregistrazione.php" method="POST">
         <label for="username">Username:</label>
@@ -31,7 +31,7 @@
 </div>
 
 
-<div class="social-table container-fluid">
+<!-- <div class="social-table container-fluid">
     <div class="row text-center py-3">
         <div class="col">
             <a href="https://www.instagram.com" target="_blank">
@@ -57,7 +57,7 @@
             <p>&copy; 2025 Ristorante Ciardo. Tutti i diritti riservati. È vietata la riproduzione, distribuzione o utilizzo non autorizzato dei contenuti di questa pagina.</p>
         </div>
     </div>
-</div>
+</div> -->
 
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>

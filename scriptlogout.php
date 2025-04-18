@@ -6,6 +6,6 @@ session_unset();
 session_destroy();
 
 echo "Logout effettuato.<br>";
-echo '<a href="paginalogin.html">Torna alla pagina di login</a>';
+echo '<a href="paginalogin.php">Torna alla pagina di login</a>';
 
 ?>

@@ -13,7 +13,7 @@ include 'connessione.php';
 // controlla se l'utente è loggato
 if (!isset($_SESSION['username'])) {
     // reindirizza alla pagina di login
-    header("Location: paginalogin.html");
+    header("Location: paginalogin.php");
     exit();
 }
 echo ("Benvenuto " . $_SESSION["username"] . "<br>");

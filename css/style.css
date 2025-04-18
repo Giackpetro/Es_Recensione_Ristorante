@@ -1,4 +1,5 @@
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
+
 html{   /*assicura che il body possa utilizzare il 100% dell'altezza*/
     height: 100%;
     margin: 0;
@@ -12,7 +13,7 @@ body {
     align-items: center;
     height: 100%;
     margin: 0;
-    background-image: url("https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8cmlzdG9yYW50ZXxlbnwwfHwwfHx8MA%3D%3D");
+    background-image: url("https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8cmlzdG9yYW50ZXxlbnwwfHwwfHx8MA%3D%3D"); 
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -41,6 +42,7 @@ body {
     display: block;
     margin: 10px 0 5px;
     color: rgb(255, 203, 125);
+    
 }
 .login-div input{
     width: 90%;
@@ -69,14 +71,67 @@ body {
     text-decoration: none;
 }
 
+
+.reg-div {
+    border: 2px solid black;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: rgb(9, 2, 33);
+    width: 300px;
+    text-align: center;
+    border-radius: 6%;
+    margin-bottom: 100px;
+}
+.reg-div h1{
+    margin-bottom: 20px;
+    color: rgb(255, 203, 125);
+}
+.reg-div h2{
+    margin-bottom: 20px;
+    color: rgb(255, 203, 125);
+}
+.reg-div label{
+    display: block;
+    margin: 10px 0 5px;
+    color: rgb(255, 203, 125);
+}
+.reg-div input{
+    width: 90%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.reg-div button{
+    width: 90%;
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: rgb(21, 34, 80);
+    color: rgb(255, 203, 125);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.reg-div button:hover {
+    background-color: rgb(10, 36, 120);
+}
+.reg-div a {
+    color: rgb(3, 3, 200);
+    text-decoration: none;
+}
+
+
 .social-table {
     position: fixed; /* Posizionato in fondo alla pagina */
     bottom: 0;
-    width: 100%; /* Larghezza totale */
+    width: 100%;
+    height: 150px;
     background-color: #00000044;
     backdrop-filter: blur(8px);
     padding: 10px 0;
-    z-index: 10; /* Assicura che sia sopra l'immagine di sfondo */
+    z-index: 10; /*sopra l'immagine di sfondo */
 }
 
 .social-table a {
@@ -106,3 +161,6 @@ body {
     color: rgb(255, 175, 75); /* Colore più scuro al passaggio del mouse */
 }
 
+.errore{
+    color: red;
+}

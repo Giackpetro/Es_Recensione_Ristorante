@@ -15,7 +15,7 @@ $resultUsername = $conn->query($sqlUsername);
 if ($resultUsername->num_rows > 0) {
     //username già esistente
     $_SESSION["errore"] = "Username già in uso.";
-    header("Location: errore_loginreg.php");
+    header("Location: paginaregistrazione.php");
     exit();
 } 
 
@@ -26,7 +26,7 @@ $resultEmail = $conn->query($sqlEmail);
 if ($resultEmail->num_rows > 0) {
     //email già esistente
     $_SESSION["errore"] = "Email già in uso.";
-    header("Location: errore_loginreg.php");
+    header("Location: paginaregistrazione.php");
     exit();
 }
 
@@ -44,7 +44,7 @@ if ($conn->query($sqlInsert) === TRUE) {
 } else {
     //errore durante l'inserimento nel database
     $_SESSION["errore"] = "Errore durante la registrazione. Riprova.";
-    header("Location: errore_loginreg.php");
+    header("Location: paginaregistrazione.php");
     exit();
 }
 
