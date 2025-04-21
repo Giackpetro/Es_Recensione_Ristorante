@@ -11,27 +11,18 @@
     <div class="reg-div">
     <h2>Registrazione Utente</h2>
     <form action="scriptregistrazione.php" method="POST">
-        <label for="username">Username:</label>
-        <input type="text" id="username" name="username" required>
-        
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required>
-        
-        <label for="nome">Nome:</label>
-        <input type="text" id="nome" name="nome" required>
-        
-        <label for="cognome">Cognome:</label>
-        <input type="text" id="cognome" name="cognome" required>
-        
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
-        
-        <button type="submit">Registrati</button>
-    </form>
+            <label for="username">Registrazione</label>
+            <input type="text" id="username" name="username" placeholder="Username" required>
+            <input type="password" id="password" name="password" placeholder="Password" required>
+            <input type="text" id="nome" name="nome" placeholder="Nome" required>
+            <input type="text" id="cognome" name="cognome" placeholder="Cognome" required>
+            <input type="email" id="email" name="email" placeholder="Email" required>
+            <button type="submit">Registrati</button>
+        </form>
 </div>
 
 
-<!-- <div class="social-table container-fluid">
+<div class="social-table container-fluid">
     <div class="row text-center py-3">
         <div class="col">
             <a href="https://www.instagram.com" target="_blank">
@@ -57,7 +48,7 @@
             <p>&copy; 2025 Ristorante Ciardo. Tutti i diritti riservati. È vietata la riproduzione, distribuzione o utilizzo non autorizzato dei contenuti di questa pagina.</p>
         </div>
     </div>
-</div> -->
+</div>
 
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>

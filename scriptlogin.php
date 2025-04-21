@@ -19,7 +19,7 @@ include 'connessione.php';
     if ($result->num_rows > 0) {
         $row = $result->fetch_assoc();
         // Controllo della password 
-        if ($row["password"] === substr($passwordHashata, 0, 60)) {    //MODIFICARE PASSWORD SUL DB PER METTERLE CON 64 CARATTERI
+        if ($row["password"] == $passwordHashata) {    //MODIFICARE PASSWORD SUL DB PER METTERLE CON 64 CARATTERI
             // Login riuscito
             $_SESSION["username"] = $row["username"];
             header("Location: benvenuto.php");

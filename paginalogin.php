@@ -15,13 +15,11 @@
     <div class="login-div">
         <h1>Login</h1>
         <form action="scriptlogin.php" method="post">
-            <label for="username">Username:</label>
-            <input type="text" id="username" name="username" required>
+        <input type="text" id="username" name="username" placeholder="Username" required>
             <?php if (isset($_SESSION['errore']["erroreUsername"])) {
                 echo "<p class='errore'>" . $_SESSION['errore']["erroreUsername"] . "</p>";
             } ?>
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password" required>
+            <input type="text" id="password" name="password" placeholder="Password" required>
             <?php if (isset($_SESSION['errore']["errorePassword"])) {
                 echo "<p class='errore'>" . $_SESSION['errore']["errorePassword"] . "</p>";
             } ?>
