@@ -6,8 +6,13 @@ $idUtente = $_SESSION['id'];
 $codiceRistorante = $_POST['ristorante'];
 $voto = $_POST['voto'];
 
+
 $sql = "SELECT * FROM recensione WHERE idutente = $idUtente AND codiceristorante = '$codiceRistorante'";
+
 $result = $conn->query($sql);
+if (!$result) {
+    die('Invalid query: ' . mysqli_error($conn));
+}
 
 if ($result->num_rows > 0) {
     $_SESSION['esito_recensione'] = false;

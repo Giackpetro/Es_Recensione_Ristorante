@@ -28,6 +28,7 @@
                     $rowUtente = $resultUtente->fetch_assoc();
                     $nomeUtente = $rowUtente["nome"];
                     $idUtente = $rowUtente["id"];
+                    $_SESSION['id'] = $idUtente;
                     echo "<h1 class='mb-4'>Benvenuto " . $nomeUtente . "</h1>";
                 } else {
                     echo "<p class='text-danger'>Utente non trovato.</p>";
@@ -84,7 +85,7 @@
                 <label for="ristorante" class="form-label">Seleziona un ristorante:</label>
                 <select id="ristorante" name="ristorante" class="form-select" required>
                     <?php
-                    $sqlRistoranti = "SELECT codice, nome FROM ristorante";
+                    $sqlRistoranti = "SELECT codice, nome FROM ristorante WHERE codice NOT IN (SELECT codiceristorante FROM recensione WHERE idutente = $idUtente)";
                     $resultRistoranti = $conn->query($sqlRistoranti);
 
                     if ($resultRistoranti->num_rows > 0) {
