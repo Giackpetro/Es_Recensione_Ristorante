@@ -11,7 +11,7 @@
 <div class="container">
     <div class="row justify-content-center">
         <!-- Div per informazioni utente -->
-        <div class="col-md-5 benvenuto-div me-3">
+        <div class="col-md-5 benvenuto-div">
             <?php
                 session_start();
                 include 'connessione.php';
@@ -79,7 +79,7 @@
             ?>
         </div>
         <!-- Div per inserire recensione -->
-        <div class="col-md-5 benvenuto-form-div">
+        <div class="col-md-5 benvenuto-div">
             <h2>Inserisci una nuova recensione</h2>
             <form action="inseriscirecensione.php" method="POST" class="form-recensione">
                 <label for="ristorante" class="form-label">Seleziona un ristorante:</label>
@@ -97,20 +97,48 @@
                     }
                     ?>
                 </select>
-
-                <label class="form-label">Seleziona il voto:</label>
-                <div class="rating-container">
+                <br>
+                <label>Seleziona il voto:</label>
+                <div>
                     <?php for ($i = 1; $i <= 5; $i++): ?>
-                        <input type="radio" id="voto<?= $i ?>" name="voto" class="rating-input" value="<?= $i ?>" required>
-                        <label for="voto<?= $i ?>" class="rating-label"><?= $i ?><i class="bi bi-star"></i></label>
+                        <input type="radio" id="voto<?= $i ?>" name="voto" value="<?= $i ?>" required>
+                        <label for="voto<?= $i ?>"> <?php echo$i ?> <i class="bi bi-star"></i></label>
                     <?php endfor; ?>
                 </div>
-                <button type="submit" class="btn benvenuto-btn">Invia Recensione</button>
+                <button type="submit">Invia Recensione</button>
             </form>
             <a href="scriptlogout.php" class="benvenuto-link">Logout</a>
         </div>
     </div>
 </div>
+
+<div class="social-table container-fluid">
+        <div class="row text-center py-3">
+            <div class="col">
+                <a href="https://www.instagram.com" target="_blank">
+                    <i class="bi bi-instagram fs-2"></i>
+                    <p>Instagram</p>
+                </a>
+            </div>
+            <div class="col">
+                <a href="https://www.facebook.com" target="_blank">
+                    <i class="bi bi-facebook fs-2"></i>
+                    <p>Facebook</p>
+                </a>
+            </div>
+            <div class="col">
+                <a href="https://www.tiktok.com" target="_blank">
+                    <i class="bi bi-tiktok fs-2"></i>
+                    <p>TikTok</p>
+                </a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col text-center">
+                <p>&copy; 2025 Ristorante Ciardo. Tutti i diritti riservati. È vietata la riproduzione, distribuzione o utilizzo non autorizzato dei contenuti di questa pagina.</p>
+            </div>
+        </div>
+    </div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
