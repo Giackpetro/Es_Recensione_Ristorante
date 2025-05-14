@@ -17,12 +17,15 @@
             <input type="text" id="nome" name="nome" placeholder="Nome" required>
             <input type="text" id="cognome" name="cognome" placeholder="Cognome" required>
             <input type="email" id="email" name="email" placeholder="Email" required>
+            <p>Sei un amministratore</p>
+            <label for="admin">Si<input type="radio" value="1" name="admin" id="admin"></label>
+            <label for="admin">No<input type="radio" value="0" name="admin" id="admin"></label>
             <button type="submit">Registrati</button>
         </form>
 </div>
 
 
-<div class="social-table container-fluid">
+<!-- <div class="social-table container-fluid">
     <div class="row text-center py-3">
         <div class="col">
             <a href="https://www.instagram.com" target="_blank">
@@ -48,7 +51,7 @@
             <p>&copy; 2025 Ristorante Ciardo. Tutti i diritti riservati. È vietata la riproduzione, distribuzione o utilizzo non autorizzato dei contenuti di questa pagina.</p>
         </div>
     </div>
-</div>
+</div> -->
 
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>

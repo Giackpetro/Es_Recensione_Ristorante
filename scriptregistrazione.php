@@ -34,12 +34,22 @@ if ($resultEmail->num_rows > 0) {
 $passwordHash = hash("sha256", $password);
 
 //inserisco il nuovo utente nel database
-$sqlInsert = "INSERT INTO utente (username, password, nome, cognome, email)  VALUES ('$username', '$passwordHash', '$nome', '$cognome', '$email')";
 
-if ($conn->query($sqlInsert) === TRUE) {
+    if (isset($_POST["admin"])) {
+        $isadmin = 1;
+    } else{
+        $isadmin = 0;
+    }
+    $sqlInsert = "INSERT INTO utente (username, password, nome, cognome, email, isadmin) VALUES ('$username', '$passwordHash', '$nome', '$cognome', '$email', '$isadmin')";
+    if ($conn->query($sqlInsert) === TRUE) {
+    
     //registrazione effettuata
     $_SESSION["username"] = $username; 
-    header("Location: benvenuto.php");
+    if($isadmin == 1){
+        header("Location: pannelloadmin.php");
+    }else{
+        header("Location: benvenuto.php");
+    }
     exit();
 } else {
     //errore durante l'inserimento nel database
