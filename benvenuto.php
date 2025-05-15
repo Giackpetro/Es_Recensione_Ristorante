@@ -26,6 +26,10 @@
 
                 if ($resultUtente->num_rows > 0) {
                     $rowUtente = $resultUtente->fetch_assoc();
+                    if ($rowUtente["isAdmin"] == 1) {   //controllo se l'utente è un amministratore
+                        header("Location: pannelloadmin.php");
+                        exit();
+                    }
                     $nomeUtente = $rowUtente["nome"];
                     $idUtente = $rowUtente["id"];
                     $_SESSION['id'] = $idUtente;
