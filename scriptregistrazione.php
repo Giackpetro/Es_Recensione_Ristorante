@@ -40,7 +40,7 @@ $passwordHash = hash("sha256", $password);
     } else{
         $isadmin = 0;
     }
-    $sqlInsert = "INSERT INTO utente (username, password, nome, cognome, email, isadmin) VALUES ('$username', '$passwordHash', '$nome', '$cognome', '$email', '$isadmin')";
+    $sqlInsert = "INSERT INTO utente (username, password, nome, cognome, email, isadmin) VALUES ('$username', '$passwordHash', '$nome', '$cognome', '$email', false)";
     if ($conn->query($sqlInsert) === TRUE) {
     
     //registrazione effettuata

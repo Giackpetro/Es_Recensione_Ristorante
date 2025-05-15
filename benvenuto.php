@@ -10,7 +10,6 @@
 <body>
 <div class="container">
     <div class="row justify-content-center">
-        <!-- Div per informazioni utente -->
         <div class="col-md-5 benvenuto-div">
             <?php
                 session_start();

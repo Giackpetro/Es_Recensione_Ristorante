@@ -10,10 +10,10 @@
 </head>
 
 <body>
-    <div class="container">
+    <div class="container mt-4">
         <div class="row justify-content-center">
             <!-- Div per informazioni utente -->
-            <div class="col-md-5 benvenuto-div">
+            <div class="col-md- benvenuto-div">
                 <?php
                 session_start();
                 include 'connessione.php';
@@ -28,16 +28,13 @@
 
                 if ($resultRistoranti->num_rows > 0) {
                 echo "<table class='table table-dark table-striped'>
-                        thead>
-                            <tr>
-                                <th>Codice Ristorante</th>
-                                <th>Nome Ristorante</th>
-                                <th>Indirizzo</th>
-                                <th>Citta</th>
-                                <th>Numero recensioni</th>
-                            </tr>
-                        </thead>
-                    <tbody>";
+                        <tr>
+                            <th>Codice Ristorante</th>
+                            <th>Nome Ristorante</th>
+                            <th>Indirizzo</th>
+                            <th>Citta</th>
+                            <th>Numero recensioni</th>
+                        </tr>";
                 while ($rowRistorante = $resultRistoranti->fetch_assoc()) {
                     echo "<tr>
                     <td>" . $rowRistorante["codice"] . "</td>
@@ -47,7 +44,7 @@
                         <td>" . $rowRistorante["numRec"] . "</td>
                         </tr>";
                 }
-                echo "</tbody></table>";
+                echo "</table>";
                 } else {
                 echo "<p class='text-warning'>Nessuna ristorante presente.</p>";
                 }
@@ -69,7 +66,7 @@
         </div>
     </div>
 
-    <!-- <div class="social-table container-fluid">
+    <footer class="social-table container-fluid">
         <div class="row text-center py-3">
             <div class="col">
                 <a href="https://www.instagram.com" target="_blank">
@@ -92,10 +89,10 @@
         </div>
         <div class="row">
             <div class="col text-center">
-                <p>&copy; 2025 Ristorante Ciardo. Tutti i diritti riservati. È vietata la riproduzione, distribuzione o utilizzo non autorizzato dei contenuti di questa pagina.</p>
+                <p>&copy; 2025 Ristoranti Chardi. Tutti i diritti riservati. È vietata la riproduzione, distribuzione o utilizzo non autorizzato dei contenuti di questa pagina.</p>
             </div>
         </div>
-    </div> -->
+    </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
