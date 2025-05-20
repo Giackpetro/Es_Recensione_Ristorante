@@ -59,6 +59,8 @@
                     <input type="text" id="nome" name="nome" placeholder="Nome" required>
                     <input type="text" id="indirizzo" name="indirizzo" placeholder="Indirizzo" required>
                     <input type="text" id="citta" name="citta" placeholder="Citta" required>
+                    <input type="text" id="latitudine" name="latitudine" placeholder="Latitudine" value="43.7800127" required>
+                    <input type="text" id="longitudine" name="longitudine" placeholder="Longitudine" value="11.1997685" required>
                     <button type="submit">Salva</button>
                 </form>
                 <a href="scriptlogout.php" class="benvenuto-link">Logout</a>

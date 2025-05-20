@@ -80,6 +80,25 @@
                     unset($_SESSION['esito_recensione']);
                 }
             ?>
+
+                <form action="info_ristorante.php" method="POST" class="form-recensione">
+                <label for="codice" class="form-label">Seleziona un ristorante per vedere le sue informazioni:</label>
+                <select id="codice" name="codice" class="form-select" required>
+                    <?php
+                    $sqlRistoranti = "SELECT codice, nome FROM ristorante ORDER BY nome";
+                    $resultRistoranti = $conn->query($sqlRistoranti);
+
+                    if ($resultRistoranti->num_rows > 0) {
+                        while ($rowRistorante = $resultRistoranti->fetch_assoc()) {
+                            echo "<option value='" .$rowRistorante['codice'] . "'>" . $rowRistorante['nome'] . "</option>";
+                        }
+                    } else {
+                        echo "<option disabled>Nessun ristorante disponibile</option>";
+                    }
+                    ?>
+                </select>
+                <button type="submit">Info Ristorante</button>
+            </form>
         </div>
         <!-- Div per inserire recensione -->
         <div class="col-md-5 benvenuto-div">
@@ -115,7 +134,7 @@
     </div>
 </div>
 
-<div class="social-table container-fluid">
+<!-- <div class="social-table container-fluid">
         <div class="row text-center py-3">
             <div class="col">
                 <a href="https://www.instagram.com" target="_blank">
@@ -141,7 +160,7 @@
                 <p>&copy; 2025 Ristorante Ciardo. Tutti i diritti riservati. È vietata la riproduzione, distribuzione o utilizzo non autorizzato dei contenuti di questa pagina.</p>
             </div>
         </div>
-    </div>
+    </div> -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

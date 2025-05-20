@@ -213,3 +213,70 @@ body {
     background-color: rgb(13, 25, 66);
     color: white;
 }
+
+/* Stili per la pagina Info Ristorante */
+.info_ristorante {
+    background-image: none;
+    font-family: Arial, sans-serif;
+    color: rgb(255, 203, 125);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    margin: 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+
+/* Lista */
+.info_ristorante ul {
+    margin-bottom: 20px;
+}
+
+/* Tabella */
+.info_ristorante .table {
+    margin-bottom: 20px;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.info_ristorante .table th, .info_ristorante .table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.info_ristorante .table th {
+    background-color: #333;
+    color: white;
+}
+
+/* Messaggio di avviso */
+.info_ristorante .text-warning {
+    margin-bottom: 20px;
+    color: #ffcc00;
+}
+
+/* Mappa */
+.info_ristorante #map {
+    height: 180px;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+/* Link */
+.info_ristorante a {
+    display: block;
+    text-align: center;
+    font-size: 18px;
+    text-decoration: none;
+    color: #007bff;
+    margin-bottom: 20px;
+}
+
+.info_ristorante a:hover {
+    text-decoration: underline;
+}
