@@ -214,39 +214,68 @@ body {
     color: white;
 }
 
-/* Stili per la pagina Info Ristorante */
+/* stili per la pagina info_ristorante */
 .info_ristorante {
-    background-image: none;
     font-family: Arial, sans-serif;
     color: rgb(255, 203, 125);
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    height: 100%;
-    margin: 0;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    overflow: hidden;
-}
-
-/* Lista */
-.info_ristorante ul {
-    margin-bottom: 20px;
-}
-
-/* Tabella */
-.info_ristorante .table {
-    margin-bottom: 20px;
-    border-collapse: collapse;
+    padding: 20px;
     width: 100%;
+    
 }
 
-.info_ristorante .table th, .info_ristorante .table td {
-    border: 1px solid #ddd;
-    padding: 8px;
-    text-align: left;
+/* Contenitore principale */
+.contenitore {
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 900px;
+}
+
+/* Box informazioni */
+.info_box {
+    width: 45%;
+    padding: 15px;
+    background-color: rgba(50, 50, 50, 0.8);
+    border-radius: 8px;
+}
+
+/* Box recensioni */
+.recensioni_box {
+    width: 45%;
+    padding: 15px;
+    background-color: rgba(50, 50, 50, 0.8);
+    border-radius: 8px;
+}
+
+/* titolo */
+.info_ristorante h1 {
+    font-size: 32px;
+    font-weight: bold;
+    color: #ff9900;
+    margin-bottom: 20px;
+}
+
+/* lista informazioni */
+.info_ristorante .info_list {
+    list-style-type: none;
+    padding: 0;
+    font-size: 18px;
+}
+
+.info_ristorante .info_list li {
+    padding: 5px 0;
+}
+
+/* tabella recensioni */
+.info_ristorante .table {
+    width: 100%;
+    max-width: 800px;
+    border-collapse: collapse;
+    margin-bottom: 20px;
 }
 
 .info_ristorante .table th {
@@ -254,29 +283,42 @@ body {
     color: white;
 }
 
-/* Messaggio di avviso */
+.info_ristorante .table td {
+    padding: 8px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+/* messaggio di avviso */
 .info_ristorante .text-warning {
     margin-bottom: 20px;
     color: #ffcc00;
 }
 
-/* Mappa */
+/* mappa */
 .info_ristorante #map {
-    height: 180px;
-    margin-bottom: 20px;
-    width: 100%;
+    height: 400px;
+    width: 70%;
+    margin-top: 20px;
+}
+
+/* Mini div trasparente per il link */
+.back_link {
+    background-color: rgba(50, 50, 50, 0.8); /* Sfondo semi-trasparente */
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    width: fit-content;
 }
 
 /* Link */
-.info_ristorante a {
-    display: block;
-    text-align: center;
+.back_link a {
     font-size: 18px;
     text-decoration: none;
-    color: #007bff;
-    margin-bottom: 20px;
+    color: rgb(255, 203, 125); /* Stesso colore del testo */
 }
 
-.info_ristorante a:hover {
-    text-decoration: underline;
+.back_link a:hover {
+    text-decoration: none;
+    color: #ff9900; /* Cambio colore al passaggio del mouse */
 }

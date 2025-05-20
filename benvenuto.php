@@ -129,12 +129,12 @@
                 </div>
                 <button type="submit">Invia Recensione</button>
             </form>
-            <a href="scriptlogout.php" class="benvenuto-link">Logout</a>
+            <a href="paginalogin.php" class="benvenuto-link">Logout</a>
         </div>
     </div>
 </div>
 
-<!-- <div class="social-table container-fluid">
+<div class="social-table container-fluid">
         <div class="row text-center py-3">
             <div class="col">
                 <a href="https://www.instagram.com" target="_blank">
@@ -160,7 +160,7 @@
                 <p>&copy; 2025 Ristorante Ciardo. Tutti i diritti riservati. È vietata la riproduzione, distribuzione o utilizzo non autorizzato dei contenuti di questa pagina.</p>
             </div>
         </div>
-    </div> -->
+    </div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
