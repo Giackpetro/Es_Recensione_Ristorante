@@ -101,7 +101,7 @@
             </form>
         </div>
         <!-- Div per inserire recensione -->
-        <div class="col-md-5 benvenuto-div">
+        <div class="col-md-5 benvenuto-div benvenuto-div-left">
             <h2>Inserisci una nuova recensione</h2>
             <form action="inseriscirecensione.php" method="POST" class="form-recensione">
                 <label for="ristorante" class="form-label">Seleziona un ristorante:</label>

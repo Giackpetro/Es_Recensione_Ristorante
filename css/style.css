@@ -70,6 +70,9 @@ body {
     text-decoration: none;
 }
 
+.login-div table{
+    margin-top: 7%;
+}
 
 .reg-div {
     border: 2px solid black;
@@ -171,7 +174,6 @@ body {
     width: 90%;
     border: 2px solid black;
     border-radius: 6%;
-    padding: 20px;
     margin-top: 10px;
     margin-bottom: 10px;
     margin-left: auto;
@@ -179,6 +181,10 @@ body {
     background-color: rgb(9, 2, 33);
     color: rgb(255, 203, 125);
     cursor: pointer;
+}
+
+.benvenuto-div-left{
+    padding-top: 7%;
 }
 
 .benvenuto-div a {

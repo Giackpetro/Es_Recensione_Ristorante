@@ -11,64 +11,69 @@
 
 <body>
     <div class="container mt-4">
-        <div class="row justify-content-center">
-            <!-- Div per informazioni utente -->
-            <div class="col-md- benvenuto-div">
-                <?php
-                session_start();
-                include 'connessione.php';
+    <div class="d-flex justify-content-center gap-3"> <!-- FLEX per disposizione orizzontale -->
 
-                if (!isset($_SESSION['username'])) {
+        <!-- Div per inserire recensione -->
+        <div class="login-div p-3">
+            <h2>Inserisci un nuovo ristorante</h2>
+            <form action="inserisciristorante.php" method="POST">
+                <label for="nome">Registrazione Ristorante</label>
+                <input type="text" id="nome" name="nome" placeholder="Nome" required>
+                <input type="text" id="indirizzo" name="indirizzo" placeholder="Indirizzo" required>
+                <input type="text" id="citta" name="citta" placeholder="Città" required>
+                <input type="text" id="latitudine" name="latitudine" placeholder="Latitudine" value="43.7800127" required>
+                <input type="text" id="longitudine" name="longitudine" placeholder="Longitudine" value="11.1997685" required>
+                <button type="submit">Salva</button>
+            </form>
+            <a href="paginalogin.php" class="benvenuto-link">Logout</a>
+        </div>
+        <!-- Div per informazioni ristoranti -->
+        <div class="login-div flex-grow-1 p-3 text-center">
+            <h1>Ristoranti presenti</h1>
+            <?php
+            session_start();
+            include 'connessione.php';
+
+            if (!isset($_SESSION['username'])) {
                 header("Location: paginalogin.php");
                 exit();
-                }
+            }
 
-                $sqlRistoranti    = "SELECT ri. *, COUNT(re.codiceristorante) AS numRec FROM ristorante ri LEFT JOIN recensione re ON ri.codice = re.codiceristorante GROUP BY ri.codice";
-                $resultRistoranti = $conn->query($sqlRistoranti);
+            $sqlRistoranti = "SELECT ri. *, COUNT(re.codiceristorante) AS numRec FROM ristorante ri LEFT JOIN recensione re ON ri.codice = re.codiceristorante GROUP BY ri.codice";
+            $resultRistoranti = $conn->query($sqlRistoranti);
 
-                if ($resultRistoranti->num_rows > 0) {
-                echo "<table class='table table-dark table-striped'>
+            if ($resultRistoranti->num_rows > 0) {
+                echo "<div class='overflow-auto'> <!-- Mantiene layout pulito -->
+                        <table class='table table-dark table-striped mx-auto'>
                         <tr>
                             <th>Codice Ristorante</th>
                             <th>Nome Ristorante</th>
                             <th>Indirizzo</th>
-                            <th>Citta</th>
+                            <th>Città</th>
                             <th>Numero recensioni</th>
                         </tr>";
                 while ($rowRistorante = $resultRistoranti->fetch_assoc()) {
                     echo "<tr>
-                    <td>" . $rowRistorante["codice"] . "</td>
-                        <td>" . $rowRistorante["nome"] . "</td>
-                        <td>" . $rowRistorante["indirizzo"] . "</td>
-                        <td>" . $rowRistorante["citta"] . "</td>
-                        <td>" . $rowRistorante["numRec"] . "</td>
-                        </tr>";
+                            <td>" . $rowRistorante["codice"] . "</td>
+                            <td>" . $rowRistorante["nome"] . "</td>
+                            <td>" . $rowRistorante["indirizzo"] . "</td>
+                            <td>" . $rowRistorante["citta"] . "</td>
+                            <td>" . $rowRistorante["numRec"] . "</td>
+                          </tr>";
                 }
-                echo "</table>";
-                } else {
-                echo "<p class='text-warning'>Nessuna ristorante presente.</p>";
-                }
-                ?>
-            </div>
-
-            <!-- Div per inserire recensione -->
-            <div class="col-md-5 login-div">
-                <h2>Inserisci un nuovo ristorante</h2>
-                <form action="inserisciristorante.php" method="POST">
-                    <label for="nome">Registrazione Ristorante</label>
-                    <input type="text" id="nome" name="nome" placeholder="Nome" required>
-                    <input type="text" id="indirizzo" name="indirizzo" placeholder="Indirizzo" required>
-                    <input type="text" id="citta" name="citta" placeholder="Citta" required>
-                    <input type="text" id="latitudine" name="latitudine" placeholder="Latitudine" value="43.7800127" required>
-                    <input type="text" id="longitudine" name="longitudine" placeholder="Longitudine" value="11.1997685" required>
-                    <button type="submit">Salva</button>
-                </form>
-                <a href="scriptlogout.php" class="benvenuto-link">Logout</a>
-            </div>
+                echo "</table></div>";
+            } else {
+                echo "<p class='text-warning'>Nessun ristorante presente.</p>";
+            }
+            ?>
         </div>
-    </div>
 
-    <footer class="social-table container-fluid">
+        
+    </div>
+</div>
+
+
+    <footer class="social-table container-fluid fixed-bottom">
         <div class="row text-center py-3">
             <div class="col">
                 <a href="https://www.instagram.com" target="_blank">
