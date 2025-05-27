@@ -75,7 +75,7 @@
 
 <script>
     function myMap() {
-        var map = L.map('map').setView([<?php echo $row['latitudine']; ?>, <?php echo $row['longitudine']; ?>], 13);
+        var map = L.map('map').setView([<?php echo $row['latitudine']; ?>, <?php echo $row['longitudine']; ?>], 20);
 
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -91,5 +91,4 @@
 </div>
 
 </body>
-
 </html>

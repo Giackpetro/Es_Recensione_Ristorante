@@ -11,7 +11,7 @@
 
 <body>
     <div class="container mt-4">
-    <div class="d-flex justify-content-center gap-3"> <!-- FLEX per disposizione orizzontale -->
+    <div class="d-flex justify-content-center gap-3">
 
         <!-- Div per inserire recensione -->
         <div class="login-div p-3">
