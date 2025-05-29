@@ -107,7 +107,6 @@ if ($resultUtente->num_rows > 0) {
                 </select>
                 <button type="submit" class="btn btn-info mt-2">Info Ristorante</button>
             </form>
-
         </div>
 
         <div class="col-md-5 benvenuto-div benvenuto-div-left">
@@ -138,7 +137,19 @@ if ($resultUtente->num_rows > 0) {
                 </div>
                 <button type="submit">Invia Recensione</button>
             </form>
+
+   
+            <h3>Cambia Password</h3>
+            <form action="cambio_password.php" method="POST">
+                <label for="nuova_password" class="form-label">Inserisci nuova password:</label>
+                <input type="password" id="nuova_password" name="nuova_password" class="form-control" required>
+                <button type="submit" class="btn btn-warning mt-2">Modifica Password</button>
+            </form>
+
+            
             <a href="paginalogin.php" class="benvenuto-link">Logout</a>
+
+            
         </div>
     </div>
 </div>
