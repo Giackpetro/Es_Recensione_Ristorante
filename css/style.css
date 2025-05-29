@@ -308,6 +308,16 @@ body {
     margin-top: 20px;
 }
 
+#btnElimina{
+    background-color: rgb(167, 0, 0);
+    color: white;
+}
+
+#btnElimina:hover{
+    background-color: rgb(255, 0, 0);
+    color: white;
+}
+
 /* Mini div trasparente per il link */
 .back_link {
     background-color: rgba(50, 50, 50, 0.8); /* Sfondo semi-trasparente */
